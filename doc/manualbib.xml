@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE file SYSTEM "bibxmlext.dtd" >
+
+<file>
+
+<entry id="CCN85"><book>
+  <author>
+    <name><first>J. H.</first><last>Conway</last></name>
+    <name><first>R. T.</first><last>Curtis</last></name>
+    <name><first>S. P.</first><last>Norton</last></name>
+    <name><first>R. A.</first><last>Parker</last></name>
+    <name><first>R. A.</first><last>Wilson</last></name>
+  </author>
+  <title>Atlas of finite groups</title>
+  <publisher>Oxford University Press</publisher>
+  <year>1985</year>
+  <address>Eynsham</address>
+  <note>Maximal subgroups and ordinary characters for simple groups,
+              With computational assistance from J. G. Thackray</note>
+  <isbn>0-19-853199-0</isbn>
+  <mrnumber>827219 (88g:20025)</mrnumber>
+  <mrclass>20D05 (20-02)</mrclass>
+  <mrreviewer>R. L. Griess</mrreviewer>
+  <other type="pages">xxxiv+252</other>
+</book></entry>
+
+<entry id="HP89"><book>
+  <author>
+    <name><first>Derek F.</first><last>Holt</last></name>
+    <name><first>W.</first><last>Plesken</last></name>
+  </author>
+  <title>Perfect groups</title>
+  <publisher>The Clarendon Press Oxford University Press</publisher>
+  <year>1989</year>
+  <series>Oxford Mathematical Monographs</series>
+  <address>New York</address>
+  <note>With an appendix by W. Hanrath,
+              Oxford Science Publications</note>
+  <isbn>0-19-853559-7</isbn>
+  <mrnumber>1025760 (91c:20029)</mrnumber>
+  <mrclass>20D05 (20F05)</mrclass>
+  <mrreviewer>M. Ram Murty</mrreviewer>
+  <other type="pages">xii+364</other>
+</book></entry>
+
+</file>
