@@ -7,7 +7,9 @@ The GAP library of finite perfect groups provides, up to isomorphism, a list
 of all perfect groups whose sizes are less than 2 000 000. The groups of
 orders up to 10^6 have been enumerated by Derek F. Holt and Wilhelm Plesken
 and published in their book "Perfect Groups" (Oxford University Press, 1989).
-The remaining groups were enumerated by Alexander Hulpke.
+The remaining groups were enumerated by Alexander Hulpke, *The perfect groups
+of order up to two million*, Math. Comp. **91** (2022), no. 334, 1007-1017,
+<https://doi.org/10.1090/mcom/3684>.
 
 In addition, this package provides methods for computing the perfect and
 simple subgroups of a finite group, via the attributes
@@ -36,6 +38,13 @@ distribution and no separate installation is required.
 To install a development version, place the contents of this repository into
 the `pkg` directory of your GAP installation, in a subdirectory named
 `perfgrp`.
+
+For reasons of size, the data for the orders 1376256 and 1966080 is not
+shipped with this package. If you need those groups, fetch `perf27.grp`
+respectively `perf33.grp` from <https://github.com/hulpke/extraperfect> and
+put them into the `data` subdirectory. GAP tells you which file it wants if
+you ask for a group it does not have; see the section "Data Not Distributed
+with the Package" in the manual.
 
 
 ## Contact

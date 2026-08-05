@@ -43,4 +43,20 @@
   <other type="pages">xii+364</other>
 </book></entry>
 
+<entry id="Hulpke22"><article>
+  <author>
+    <name><first>Alexander</first><last>Hulpke</last></name>
+  </author>
+  <title>The perfect groups of order up to two million</title>
+  <journal>Math. Comp.</journal>
+  <year>2022</year>
+  <volume>91</volume>
+  <number>334</number>
+  <pages>1007&ndash;1017</pages>
+  <issn>0025-5718</issn>
+  <other type="fjournal">Mathematics of Computation</other>
+  <url>https://doi.org/10.1090/mcom/3684</url>
+  <other type="doi">10.1090/mcom/3684</other>
+</article></entry>
+
 </file>

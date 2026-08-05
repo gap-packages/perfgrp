@@ -35,8 +35,10 @@ were found in 2020 by Alexander Hulpke.
 <P/>
 The perfect groups of size less than <M>2\cdot 10^6</M> which had not been
 classified in the work of Holt and Plesken have been enumerated by Alexander
-Hulpke. They are stored directly and provide less construction information
-in their names.
+Hulpke; this classification is described in&nbsp;<Cite Key="Hulpke22"/>,
+which also gives an account of the methods used and of the verification
+of the resulting data. These groups are stored directly and provide less
+construction information in their names.
 <P/>
 <P/>
 As  all groups are stored  by presentations, a permutation representation
@@ -59,6 +61,53 @@ declared by the &GAP; library but require this package in order to work.
 <#Include Label="NumberPerfectGroups">
 <#Include Label="SizeNumbersPerfectGroups">
 <#Include Label="DisplayInformationPerfectGroups">
+
+</Section>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<Section Label="Data Not Distributed with the Package">
+<Heading>Data Not Distributed with the Package</Heading>
+
+<Index>extraperfect</Index>
+For reasons of size, the data for two orders is <E>not</E> shipped with this
+package: the <M>1639</M> groups of order <M>1376256</M> and the <M>7344</M>
+groups of order <M>1966080</M>. All other orders are covered by the data
+files in the <F>data</F> subdirectory of the package.
+<P/>
+How many groups there are of these two orders is recorded in the index file,
+which is always present, so <Ref Func="NumberPerfectGroups"/> and
+<Ref Func="SizesPerfectGroups"/> work as usual. Any function that has to
+touch the groups themselves, however, enters a break loop with a message
+naming the file that is missing and where to get it:
+<Log><![CDATA[
+gap> G := PerfectGroup(1376256, 1);
+Error,
+
+For reasons of size, the perfect groups library for orders >10^6 is
+not distributed fully by default. To access the group requested, get
+the file perf27.grp from
+https://github.com/hulpke/extraperfect
+and put it in the `data` subdirectory of the `perfgrp` package. Then type
+
+return;
+
+to continue in this GAP session (which will read in the file).
+]]></Log>
+<P/>
+To proceed, download the file named in the message from
+<URL>https://github.com/hulpke/extraperfect</URL>, place it in the
+<F>data</F> subdirectory of the <Package>PerfGrp</Package> package, and then
+type <C>return;</C>. The interrupted computation continues, reading in the
+file that has just been added. The two files in question are
+<F>perf27.grp</F> for order <M>1376256</M> and <F>perf33.grp</F> for order
+<M>1966080</M>.
+<P/>
+Besides <Ref Func="PerfectGroup" Label="for group order (and index)"/> and
+<Ref Func="DisplayInformationPerfectGroups"
+Label="for group order (and index)"/> called with one of these two orders,
+this also affects <Ref Func="SizeNumbersPerfectGroups"/>, which iterates
+over the whole library and therefore needs <E>both</E> files, whatever
+composition factors are asked for.
 
 </Section>
 

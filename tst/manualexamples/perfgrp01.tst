@@ -17,7 +17,7 @@ gap> for n in Intersection([100..500],SizesPerfectGroups()) do
 >      od;
 >    od;
 
-# doc/../gap/perf.gd:176-187
+# doc/../gap/perf.gd:181-192
 gap> G := PerfectGroup(IsPermGroup,6048,1);
 U3(3)
 gap> G:=PerfectGroup(IsPermGroup,823080,2);
@@ -29,7 +29,7 @@ PG1866240.12
 gap> NrMovedPoints(G);
 270
 
-# doc/../gap/perf.gd:255-280
+# doc/../gap/perf.gd:260-285
 gap> DisplayInformationPerfectGroups( 30720, 3 );
 #I Perfect group 30720:  A5 ( 2^4 E N 2^1 E 2^4 ) A
 #I   size = 2^11*3*5  orbit size = 240

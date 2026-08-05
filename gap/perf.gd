@@ -173,6 +173,11 @@ DeclareSynonym("NrPerfectLibraryGroups",NumberPerfectLibraryGroups);
 ##  In the latter case, the  generators and relators used coincide with those
 ##  given in&nbsp;<Cite Key="HP89"/>.
 ##  The default filter is <Ref BookName="ref" Filt="IsPermGroup"/>.
+##  <P/>
+##  The data for the orders 1376256 and 1966080 is not distributed with this
+##  package; for these, this function enters a break loop explaining how to
+##  obtain the missing file, see
+##  <Ref Sect="Data Not Distributed with the Package"/>.
 ##  <Example><![CDATA[
 ##  gap> G := PerfectGroup(IsPermGroup,6048,1);
 ##  U3(3)
@@ -370,6 +375,10 @@ DeclareGlobalFunction("DisplayInformationPerfectGroups");
 ##  <P/>
 ##  The purpose  of the function is  to provide a  simple way to  formulate a
 ##  loop over all library groups which contain certain composition factors.
+##  <P/>
+##  As this function runs over the whole library, it requires the data files
+##  that are not distributed with this package, whatever its arguments are,
+##  see <Ref Sect="Data Not Distributed with the Package"/>.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
