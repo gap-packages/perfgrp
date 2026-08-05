@@ -1,5 +1,5 @@
-[![Build Status](https://github.com/gap-packages/perfgrp/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/gap-packages/perfgrp/actions/workflows/CI.yml?query=branch%3Amaster)
-[![Code Coverage](https://codecov.io/github/gap-packages/perfgrp/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/perfgrp)
+[![Build Status](https://github.com/gap-packages/perfgrp/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/gap-packages/perfgrp/actions/workflows/CI.yml?query=branch%3Amain)
+[![Code Coverage](https://codecov.io/github/gap-packages/perfgrp/coverage.svg?branch=main&token=)](https://codecov.io/gh/gap-packages/perfgrp)
 
 # The PerfGrp package for GAP
 
