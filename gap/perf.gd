@@ -14,12 +14,16 @@
 ##  references to them from library code do not trigger "unbound global
 ##  variable" syntax warnings, and so that calling them without this package
 ##  produces a helpful error message. Unbind them before declaring the real
-##  thing.
-UNBIND_GLOBAL("PerfectGroup");
-UNBIND_GLOBAL("PerfectIdentification");
-UNBIND_GLOBAL("PerfGrpLoad");
-UNBIND_GLOBAL("NumberPerfectGroups");
-UNBIND_GLOBAL("NrPerfectGroups");
+##  thing. Names not bound by the GAP version in use are simply skipped.
+CallFuncList( function()
+  local name;
+  for name in [ "PerfectGroup", "PerfectIdentification", "PerfGrpLoad",
+                "NumberPerfectGroups", "NrPerfectGroups" ] do
+    if IsBoundGlobal( name ) then
+      UNBIND_GLOBAL( name );
+    fi;
+  od;
+end, [] );
 
 PERFRec := fail; # indicator that perf0.grp is not loaded
 if IsHPCGAP then

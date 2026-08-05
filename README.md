@@ -39,6 +39,10 @@ To install a development version, place the contents of this repository into
 the `pkg` directory of your GAP installation, in a subdirectory named
 `perfgrp`.
 
+GAP 4.16 and earlier contain the perfect groups library themselves. This
+package can be loaded into such a version of GAP, but is then a no-op: GAP
+already provides everything it contains, so nothing is read.
+
 For reasons of size, the data for the orders 1376256 and 1966080 is not
 shipped with this package. If you need those groups, fetch `perf27.grp`
 respectively `perf33.grp` from <https://github.com/hulpke/extraperfect> and
