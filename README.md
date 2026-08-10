@@ -41,7 +41,9 @@ the `pkg` directory of your GAP installation, in a subdirectory named
 
 GAP 4.16 and earlier contain the perfect groups library themselves. This
 package can be loaded into such a version of GAP, but is then a no-op: GAP
-already provides everything it contains, so nothing is read.
+already provides everything it contains, so nothing is read. This is mainly
+done to simplify the transition from the old bundled data library to the
+new package.
 
 For reasons of size, the data for the orders 1376256 and 1966080 is not
 shipped with this package. If you need those groups, fetch `perf27.grp`
