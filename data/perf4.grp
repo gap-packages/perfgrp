@@ -25,16 +25,13 @@
   f^-1*s^-1*f*s,f^-1*t^-1*f*t,
   f^-1*u^-1*f*u,f^-1*v^-1*f*v,s^2,
   t^2,u^2,v^2,s^-1*t^-1*s*t,
-  s^-1*u^-1*s*u*e^2,s^-1*v^-1*s*v
-  *f^2,t^-1*u^-1*t*u*f^2,
-  t^-1*v^-1*t*v*e^2*f^2,u^-1*v^-1*u
-  *v,a^-1*s*a*u^-1*f^2,
+  s^-1*u^-1*s*u*e^2,s^-1*v^-1*s*v*f^2,t^-1*u^-1*t*u*f^2,
+  t^-1*v^-1*t*v*e^2*f^2,u^-1*v^-1*u*v,a^-1*s*a*u^-1*f^2,
   a^-1*t*a*v^-1,a^-1*u*a*s^-1*f^2,
   a^-1*v*a*t^-1,
   b^-1*s*b*(t*v*e*f^-1)^-1,
   b^-1*t*b*(s*t*u*v*f)^-1,
-  b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1
-  *f^2],[[a*b,s,e,f],[a,b,e],[a,b,f]]];
+  b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1*f^2],[[a*b,s,e,f],[a,b,e],[a,b,f]]];
   end,
   [24,64,64]],
   "A5 2^1 x ( 2^4 E ( 2^1 A x 2^1 A ) ) C ( 2^1 x 2^1 )",[1,9,1],32,
@@ -43,8 +40,7 @@
   [[1,"abstuveSTUV",
   function(a,b,s,t,u,v,e,S,T,U,V)
   return
-  [[a^2,b^3,(a*b)^5,s^2*S^-1,t^2*T^-1,u^2*U^(-1
-  *1),v^2*V^-1,e^2,s^-1*t^-1*s*t,
+  [[a^2,b^3,(a*b)^5,s^2*S^-1,t^2*T^-1,u^2*U^(-1*1),v^2*V^-1,e^2,s^-1*t^-1*s*t,
   u^-1*v^-1*u*v,s^-1*u^-1*s*u,
   s^-1*v^-1*s*v,t^-1*u^-1*t*u,
   t^-1*v^-1*t*v,S^2,T^2,U^2,V^2,
@@ -146,8 +142,7 @@
   [[1,"abstuvSTUVj",
   function(a,b,s,t,u,v,S,T,U,V,j)
   return
-  [[a^2,b^3,(a*b)^5,j^2,j^-1*a^-1*j*a,j^-1
-  *b^-1*j*b,j^-1*s^-1*j*s,
+  [[a^2,b^3,(a*b)^5,j^2,j^-1*a^-1*j*a,j^-1*b^-1*j*b,j^-1*s^-1*j*s,
   j^-1*t^-1*j*t,j^-1*u^-1*j*u,
   j^-1*v^-1*j*v,j^-1*S^-1*j*S,
   j^-1*T^-1*j*T,j^-1*U^-1*j*U,
@@ -224,8 +219,7 @@
   [[1,"abstuvSTUVg",
   function(a,b,s,t,u,v,S,T,U,V,g)
   return
-  [[a^2,b^3,(a*b)^5,g^2,g^-1*a^-1*g*a,g^-1
-  *b^-1*g*b,g^-1*s^-1*g*s,
+  [[a^2,b^3,(a*b)^5,g^2,g^-1*a^-1*g*a,g^-1*b^-1*g*b,g^-1*s^-1*g*s,
   g^-1*t^-1*g*t,g^-1*u^-1*g*u,
   g^-1*v^-1*g*v,g^-1*S^-1*g*S,
   g^-1*T^-1*g*T,g^-1*U^-1*g*U,
@@ -341,9 +335,7 @@
   [[1,"abdstuvSTUV",
   function(a,b,d,s,t,u,v,S,T,U,V)
   return
-  [[a^2*d^-1,b^3,(a*b)^5,d^2,b^-1*d*b*(d*U*V)
-  ^-1,d^-1*a^-1*d*a,d^-1*s^-1*d
-  *s,d^-1*t^-1*d*t,d^-1*u^-1*d*u,
+  [[a^2*d^-1,b^3,(a*b)^5,d^2,b^-1*d*b*(d*U*V)^-1,d^-1*a^-1*d*a,d^-1*s^-1*d*s,d^-1*t^-1*d*t,d^-1*u^-1*d*u,
   d^-1*v^-1*d*v,d^-1*S^-1*d*S,
   d^-1*T^-1*d*T,d^-1*U^-1*d*U,
   d^-1*V^-1*d*V,s^2,t^2,u^2,v^2,
@@ -380,8 +372,7 @@
   [[1,"abdstuvSTUV",
   function(a,b,d,s,t,u,v,S,T,U,V)
   return
-  [[a^2*d^-1,b^3,(a*b)^5,d^2,b^-1*d*b*(d*u*v*T
-  *U)^-1,s^2*S^-1,t^2*T^-1,
+  [[a^2*d^-1,b^3,(a*b)^5,d^2,b^-1*d*b*(d*u*v*T*U)^-1,s^2*S^-1,t^2*T^-1,
   u^2*U^-1,v^2*V^-1,S^2,T^2,U^2,V^2,
   s^-1*t^-1*s*t,s^-1*u^-1*s*u,
   s^-1*v^-1*s*v,t^-1*u^-1*t*u,
@@ -401,8 +392,7 @@
   [[1,"abstuvewxyz",
   function(a,b,s,t,u,v,e,w,x,y,z)
   return
-  [[a^2,b^3,(a*b)^5,e^2,e^-1*a^-1*e*a,e^-1
-  *b^-1*e*b,e^-1*s^-1*e*s,
+  [[a^2,b^3,(a*b)^5,e^2,e^-1*a^-1*e*a,e^-1*b^-1*e*b,e^-1*s^-1*e*s,
   e^-1*t^-1*e*t,e^-1*u^-1*e*u,
   e^-1*v^-1*e*v,e^-1*w^-1*e*w,
   e^-1*x^-1*e*x,e^-1*y^-1*e*y,
@@ -412,11 +402,9 @@
   s^-1*u^-1*s*u*w*x*z,
   s^-1*v^-1*s*v*x*y,
   t^-1*u^-1*t*u*w*y*z,
-  t^-1*v^-1*t*v*w*x*z,u^-1*v^-1*u*v
-  *z,a^-1*s*a*u^-1,a^-1*t*a*v^-1,
+  t^-1*v^-1*t*v*w*x*z,u^-1*v^-1*u*v*z,a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
   b^-1*t*b*(s*t*u*v*y*z)^-1,
   b^-1*u*b*(u*v*w*x*y)^-1,
   b^-1*v*b*u^-1,b^-1*w*b*x,
@@ -442,11 +430,9 @@
   s^-1*u^-1*s*u*w*x*z,
   s^-1*v^-1*s*v*x*y,
   t^-1*u^-1*t*u*w*y*z,
-  t^-1*v^-1*t*v*w*x*z,u^-1*v^-1*u*v
-  *z,a^-1*s*a*u^-1,a^-1*t*a*v^-1,
+  t^-1*v^-1*t*v*w*x*z,u^-1*v^-1*u*v*z,a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
   b^-1*t*b*(s*t*u*v*y*z)^-1,
   b^-1*u*b*(u*v*w*x*y)^-1,
   b^-1*v*b*u^-1,b^-1*w*b*x,
@@ -471,11 +457,9 @@
   s^-1*u^-1*s*u*w*x*z,
   s^-1*v^-1*s*v*x*y,
   t^-1*u^-1*t*u*w*y*z,
-  t^-1*v^-1*t*v*w*x*z,u^-1*v^-1*u*v
-  *z,a^-1*s*a*u^-1,a^-1*t*a*v^-1,
+  t^-1*v^-1*t*v*w*x*z,u^-1*v^-1*u*v*z,a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
   b^-1*t*b*(s*t*u*v*y*z)^-1,
   b^-1*u*b*(u*v*w*x*y)^-1,
   b^-1*v*b*u^-1,b^-1*w*b*x,
@@ -489,8 +473,7 @@
   [[1,"abstuvewxyz",
   function(a,b,s,t,u,v,e,w,x,y,z)
   return
-  [[a^2,b^3,(a*b)^5,e^2,e^-1*a^-1*e*a,e^-1
-  *b^-1*e*b,e^-1*s^-1*e*s,
+  [[a^2,b^3,(a*b)^5,e^2,e^-1*a^-1*e*a,e^-1*b^-1*e*b,e^-1*s^-1*e*s,
   e^-1*t^-1*e*t,e^-1*u^-1*e*u,
   e^-1*v^-1*e*v,e^-1*w^-1*e*w,
   e^-1*x^-1*e*x,e^-1*y^-1*e*y,
@@ -505,14 +488,12 @@
   t^-1*v^-1*t*v,u^-1*v^-1*u*v,
   a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
   b^-1*t*b*(s*t*u*v)^-1,
   b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1,
   b^-1*w*b*x,b^-1*x*b*y,b^-1*y*b*w,
   b^-1*z*b*z],
-  [[b,a*b*a*b^-1*a,w*x,s],[a*b,b*a*b*a*b^-1*a
-  *b^-1,s,w]]];
+  [[b,a*b*a*b^-1*a,w*x,s],[a*b,b*a*b*a*b^-1*a*b^-1,s,w]]];
   end,
   [10,12]],
   "A5 ( 2^4 E 2^1 ) x 2^4'",[1,9,15],2,
@@ -537,8 +518,7 @@
   t^-1*v^-1*t*v,u^-1*v^-1*u*v,
   a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
   b^-1*t*b*(s*t*u*v)^-1,
   b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1,
   b^-1*w*b*x,b^-1*x*b*y,b^-1*y*b*w,
@@ -552,15 +532,13 @@
   [[1,"abstuvewxyz",
   function(a,b,s,t,u,v,e,w,x,y,z)
   return
-  [[a^2,b^3,(a*b)^5,e^2,e^-1*a^-1*e*a,e^-1
-  *b^-1*e*b,e^-1*s^-1*e*s,
+  [[a^2,b^3,(a*b)^5,e^2,e^-1*a^-1*e*a,e^-1*b^-1*e*b,e^-1*s^-1*e*s,
   e^-1*t^-1*e*t,e^-1*u^-1*e*u,
   e^-1*v^-1*e*v,e^-1*w^-1*e*w,
   e^-1*x^-1*e*x,e^-1*y^-1*e*y,
   e^-1*z^-1*e*z,w^2,w^-1*s^-1*w*s,
   w^-1*t^-1*w*t,w^-1*u^-1*w*u,
-  w^-1*v^-1*w*v,w^-1*x^-1*w*x
-  *e^-1,w^-1*y^-1*w*y*e^-1,
+  w^-1*v^-1*w*v,w^-1*x^-1*w*x*e^-1,w^-1*y^-1*w*y*e^-1,
   w^-1*z^-1*w*z*e^-1,
   x^-1*y^-1*x*y*e^-1,
   x^-1*z^-1*x*z*e^-1,
@@ -570,8 +548,7 @@
   t^-1*v^-1*t*v,u^-1*v^-1*u*v,
   a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
   b^-1*t*b*(s*t*u*v)^-1,
   b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1,
   b^-1*w*b*x,b^-1*x*b*y,b^-1*y*b*w,
@@ -600,8 +577,7 @@
   t^-1*v^-1*t*v,u^-1*v^-1*u*v,
   a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
   b^-1*t*b*(s*t*u*v)^-1,
   b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1,
   b^-1*w*b*x,b^-1*x*b*y,b^-1*y*b*w,
@@ -622,8 +598,7 @@
   e^-1*x^-1*e*x,e^-1*y^-1*e*y,
   e^-1*z^-1*e*z,w^2,w^-1*s^-1*w*s,
   w^-1*t^-1*w*t,w^-1*u^-1*w*u,
-  w^-1*v^-1*w*v,w^-1*x^-1*w*x
-  *e^-1,w^-1*y^-1*w*y*e^-1,
+  w^-1*v^-1*w*v,w^-1*x^-1*w*x*e^-1,w^-1*y^-1*w*y*e^-1,
   w^-1*z^-1*w*z*e^-1,
   x^-1*y^-1*x*y*e^-1,
   x^-1*z^-1*x*z*e^-1,
@@ -633,8 +608,7 @@
   t^-1*v^-1*t*v,u^-1*v^-1*u*v,
   a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v*e)^-1,
   b^-1*t*b*(s*t*u*v)^-1,
   b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1,
   b^-1*w*b*x,b^-1*x*b*y,b^-1*y*b*w,
@@ -654,8 +628,7 @@
   g^-1*x^-1*g*x,g^-1*y^-1*g*y,
   g^-1*z^-1*g*z,w^2,w^-1*s^-1*w*s,
   w^-1*t^-1*w*t,w^-1*u^-1*w*u,
-  w^-1*v^-1*w*v,w^-1*x^-1*w*x
-  *g^-1,w^-1*y^-1*w*y*g^-1,
+  w^-1*v^-1*w*v,w^-1*x^-1*w*x*g^-1,w^-1*y^-1*w*y*g^-1,
   w^-1*z^-1*w*z*g^-1,
   x^-1*y^-1*x*y*g^-1,
   x^-1*z^-1*x*z*g^-1,
@@ -665,8 +638,7 @@
   t^-1*v^-1*t*v,u^-1*v^-1*u*v,
   a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
   b^-1*t*b*(s*t*u*v)^-1,
   b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1,
   b^-1*w*b*x,b^-1*x*b*y,b^-1*y*b*w,
@@ -680,15 +652,13 @@
   [[1,"abstuvwxyzg",
   function(a,b,s,t,u,v,w,x,y,z,g)
   return
-  [[a^2,b^3,(a*b)^5,g^2,g^-1*a^-1*g*a,g^-1
-  *b^-1*g*b,g^-1*s^-1*g*s,
+  [[a^2,b^3,(a*b)^5,g^2,g^-1*a^-1*g*a,g^-1*b^-1*g*b,g^-1*s^-1*g*s,
   g^-1*t^-1*g*t,g^-1*u^-1*g*u,
   g^-1*v^-1*g*v,g^-1*w^-1*g*w,
   g^-1*x^-1*g*x,g^-1*y^-1*g*y,
   g^-1*z^-1*g*z,w^2,w^-1*s^-1*w*s,
   w^-1*t^-1*w*t,w^-1*u^-1*w*u,
-  w^-1*v^-1*w*v,w^-1*x^-1*w*x
-  *g^-1,w^-1*y^-1*w*y*g^-1,
+  w^-1*v^-1*w*v,w^-1*x^-1*w*x*g^-1,w^-1*y^-1*w*y*g^-1,
   w^-1*z^-1*w*z*g^-1,
   x^-1*y^-1*x*y*g^-1,
   x^-1*z^-1*x*z*g^-1,
@@ -698,8 +668,7 @@
   t^-1*v^-1*t*v,u^-1*v^-1*u*v,
   a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
   b^-1*t*b*(s*t*u*v)^-1,
   b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1,
   b^-1*w*b*x,b^-1*x*b*y,b^-1*y*b*w,
@@ -712,8 +681,7 @@
   [[1,"abdstuvwxyz",
   function(a,b,d,s,t,u,v,w,x,y,z)
   return
-  [[a^2*d^-1,b^3,(a*b)^5,d^2*w*z,b^-1*d*b*(d*u
-  *v*y)^-1,d^-1*a^-1*d*a,
+  [[a^2*d^-1,b^3,(a*b)^5,d^2*w*z,b^-1*d*b*(d*u*v*y)^-1,d^-1*a^-1*d*a,
   d^-1*s^-1*d*s*x*y,
   d^-1*t^-1*d*t*w*y*z,
   d^-1*u^-1*d*u*w*y*z,
@@ -722,11 +690,9 @@
   d^-1*z^-1*d*z,w^2,w^-1*s^-1*w*s,
   w^-1*t^-1*w*t,w^-1*u^-1*w*u,
   w^-1*v^-1*w*v,s^2*w,t^2*w,u^2*z,v^2*z,
-  s^-1*t^-1*s*t*w,s^-1*u^-1*s*u*w*x
-  *z,s^-1*v^-1*s*v*x*y,
+  s^-1*t^-1*s*t*w,s^-1*u^-1*s*u*w*x*z,s^-1*v^-1*s*v*x*y,
   t^-1*u^-1*t*u*w*y*z,
-  t^-1*v^-1*t*v*w*x*z,u^-1*v^-1*u*v
-  *z,a^-1*s*a*(u*x)^-1,
+  t^-1*v^-1*t*v*w*x*z,u^-1*v^-1*u*v*z,a^-1*s*a*(u*x)^-1,
   a^-1*t*a*(v*x*z)^-1,
   a^-1*u*a*(s*y)^-1,
   a^-1*v*a*(t*x*y*z)^-1,a^-1*w*a*z,
@@ -745,9 +711,7 @@
   [[1,"abdstuvwxyz",
   function(a,b,d,s,t,u,v,w,x,y,z)
   return
-  [[a^2*d^-1,b^3,(a*b)^5,d^2,b^-1*d*b*(d*u*v)
-  ^-1,d^-1*a^-1*d*a,d^-1*s^-1*d
-  *s,d^-1*t^-1*d*t,d^-1*u^-1*d*u,
+  [[a^2*d^-1,b^3,(a*b)^5,d^2,b^-1*d*b*(d*u*v)^-1,d^-1*a^-1*d*a,d^-1*s^-1*d*s,d^-1*t^-1*d*t,d^-1*u^-1*d*u,
   d^-1*v^-1*d*v,d^-1*w^-1*d*w,
   d^-1*x^-1*d*x,d^-1*y^-1*d*y,
   d^-1*z^-1*d*z,w^2,w^-1*s^-1*w*s,
@@ -761,8 +725,7 @@
   t^-1*v^-1*t*v,u^-1*v^-1*u*v,
   a^-1*s*a*u^-1,a^-1*t*a*v^-1,
   a^-1*u*a*s^-1,a^-1*v*a*t^-1,
-  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y
-  *z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
+  a^-1*w*a*z,a^-1*x*a*x,a^-1*y*a*w*x*y*z,a^-1*z*a*w,b^-1*s*b*(t*v)^-1,
   b^-1*t*b*(s*t*u*v)^-1,
   b^-1*u*b*(u*v)^-1,b^-1*v*b*u^-1,
   b^-1*w*b*x,b^-1*x*b*y,b^-1*y*b*w,
@@ -892,8 +855,7 @@
   [[1,"abfwxyzWXYZ",
   function(a,b,f,w,x,y,z,W,X,Y,Z)
   return
-  [[a^2,b^3,(a*b)^5,f^2,f^-1*a^-1*f*a,f^-1
-  *b^-1*f*b,f^-1*w^-1*f*w,
+  [[a^2,b^3,(a*b)^5,f^2,f^-1*a^-1*f*a,f^-1*b^-1*f*b,f^-1*w^-1*f*w,
   f^-1*x^-1*f*x,f^-1*y^-1*f*y,
   f^-1*z^-1*f*z,f^-1*W^-1*f*W,
   f^-1*X^-1*f*X,f^-1*Y^-1*f*Y,
@@ -930,8 +892,7 @@
   [[1,"abewxyzWXYZ",
   function(a,b,e,w,x,y,z,W,X,Y,Z)
   return
-  [[a^2,b^3,(a*b)^5,e^2,e^-1*a^-1*e*a,e^-1
-  *b^-1*e*b,e^-1*w^-1*e*w,
+  [[a^2,b^3,(a*b)^5,e^2,e^-1*a^-1*e*a,e^-1*b^-1*e*b,e^-1*w^-1*e*w,
   e^-1*x^-1*e*x,e^-1*y^-1*e*y,
   e^-1*z^-1*e*z,e^-1*W^-1*e*W,
   e^-1*X^-1*e*X,e^-1*Y^-1*e*Y,
@@ -1004,8 +965,7 @@
   [[1,"abgwxyzWXYZ",
   function(a,b,g,w,x,y,z,W,X,Y,Z)
   return
-  [[a^2,b^3,(a*b)^5,g^2,g^-1*a^-1*g*a,g^-1
-  *b^-1*g*b,g^-1*w^-1*g*w,
+  [[a^2,b^3,(a*b)^5,g^2,g^-1*a^-1*g*a,g^-1*b^-1*g*b,g^-1*w^-1*g*w,
   g^-1*x^-1*g*x,g^-1*y^-1*g*y,
   g^-1*z^-1*g*z,g^-1*W^-1*g*W,
   g^-1*X^-1*g*X,g^-1*Y^-1*g*Y,
@@ -1100,8 +1060,7 @@
   [[1,"abdwxyzWXYZ",
   function(a,b,d,w,x,y,z,W,X,Y,Z)
   return
-  [[a^2*d,b^3,(a*b)^5,d^2,d^-1*a^-1*d*a,d^-1
-  *b^-1*d*b,d^-1*w^-1*d*w,
+  [[a^2*d,b^3,(a*b)^5,d^2,d^-1*a^-1*d*a,d^-1*b^-1*d*b,d^-1*w^-1*d*w,
   d^-1*x^-1*d*x,d^-1*y^-1*d*y,
   d^-1*z^-1*d*z,w^2*W^-1,x^2*X^-1,
   y^2*Y^-1,z^2*Z^-1,W^2,X^2,Y^2,Z^2,
@@ -1123,8 +1082,7 @@
   [[1,"abdwxyzWXYZ",
   function(a,b,d,w,x,y,z,W,X,Y,Z)
   return
-  [[a^2,b^3,(a*b)^5,d^2,d^-1*a^-1*d*a,d^-1
-  *b^-1*d*b,d^-1*w^-1*d*w,
+  [[a^2,b^3,(a*b)^5,d^2,d^-1*a^-1*d*a,d^-1*b^-1*d*b,d^-1*w^-1*d*w,
   d^-1*x^-1*d*x,d^-1*y^-1*d*y,
   d^-1*z^-1*d*z,w^2*W^-1,x^2*X^-1,
   y^2*Y^-1,z^2*Z^-1,W^2,X^2,Y^2,Z^2,
@@ -1145,8 +1103,7 @@
   [[1,"abdwxyzWXYZ",
   function(a,b,d,w,x,y,z,W,X,Y,Z)
   return
-  [[a^2*d,b^3,(a*b)^5,d^2,b^-1*d^-1*b*d,w^2*W
-  ^-1,x^2*X^-1,y^2*Y^-1,z^2*Z^-1,
+  [[a^2*d,b^3,(a*b)^5,d^2,b^-1*d^-1*b*d,w^2*W^-1,x^2*X^-1,y^2*Y^-1,z^2*Z^-1,
   w*x*w^-1*x^-1,w*y*w^-1*y^-1,
   w*z*w^-1*z^-1,x*y*x^-1*y^-1,
   x*z*x^-1*z^-1,y*z*y^-1*z^-1,
