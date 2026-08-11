@@ -8,7 +8,7 @@ SetPackageInfo( rec(
 PackageName := "PerfGrp",
 Subtitle := "GAP Library of Finite Perfect Groups",
 Version := "1.0.0",
-Date := "04/08/2026", # dd/mm/yyyy format
+Date := "11/08/2026", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 PackageWWWHome :=
