@@ -1,267 +1,71 @@
-# GitHubPagesForGAP
+[![Build Status](https://github.com/gap-packages/perfgrp/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/gap-packages/perfgrp/actions/workflows/CI.yml?query=branch%3Amain)
+[![Code Coverage](https://codecov.io/github/gap-packages/perfgrp/coverage.svg?branch=main&token=)](https://codecov.io/gh/gap-packages/perfgrp)
 
-This repository can be used to quickly set up a website hosted by
-[GitHub](https://github.com/) for GAP packages using a GitHub repository.
-Specifically, this uses [GitHub pages](https://pages.github.com/)
-by adding a `gh-pages` branch to your package repository which
-contains data generated from the `PackageInfo.g` file of your package.
+# The PerfGrp package for GAP
 
-## Initial setup
+The GAP library of finite perfect groups provides, up to isomorphism, a list
+of all perfect groups whose sizes are less than 2 000 000. The groups of
+orders up to 10^6 have been enumerated by Derek F. Holt and Wilhelm Plesken
+and published in their book "Perfect Groups" (Oxford University Press, 1989).
+The remaining groups were enumerated by Alexander Hulpke, *The perfect groups
+of order up to two million*, Math. Comp. **91** (2022), no. 334, 1007-1017,
+<https://doi.org/10.1090/mcom/3684>.
 
-The easiest way to do this is to run the `setup-gh-pages` shell script
-provided in the [GitHubPagesForGAP]() from within a git clone of your
-package's GitHub repository.
+In addition, this package provides methods for computing the perfect and
+simple subgroups of a finite group, via the attributes
+`RepresentativesPerfectSubgroups`, `RepresentativesSimpleSubgroups` and
+`ConjugacyClassesPerfectSubgroups`.
 
-In case this does not work, or if you want to really know what's going
-on, you can also follow the manual instructions described after the fold.
+This code used to be part of the GAP core system, and was moved into a
+separate package to reduce the size of the GAP distribution and to allow
+independent updates of the data.
 
-------
 
-The following instructions assume you do not already have a `gh-pages`
-branch in your repository. If you do have one, you should delete it before
-following these instructions.
+## Documentation
 
-1. Go into your clone of your package repository.
+Full information and documentation can be found in the manual, available as
+PDF `doc/manual.pdf` or as HTML `doc/chap0_mj.html`, or on the package
+homepage at
 
-2. Setup a `gh-pages` branch in a `gh-pages` subdirectory.
+  <https://gap-packages.github.io/perfgrp/>
 
-   Users with a recent enough git version (recommended is >= 2.7.0)
-   can do this using a "worktree", via the following commands:
 
-   ```sh
-   # Add a new remote pointing to the GitHubPagesForGAP repository
-   git remote add -f gh-gap https://github.com/gap-system/GitHubPagesForGAP
+## Installation
 
-   # Create a fresh gh-pages branch from the new remote
-   git branch gh-pages gh-gap/gh-pages --no-track
+PerfGrp is a needed package of GAP, so it is contained in every GAP
+distribution and no separate installation is required.
 
-   # Create a new worktree and change into it
-   git worktree add gh-pages gh-pages
-   cd gh-pages
-   ```
+To install a development version, place the contents of this repository into
+the `pkg` directory of your GAP installation, in a subdirectory named
+`perfgrp`.
 
-   Everybody else should instead do the following, with the URL
-   in the initial clone command suitably adjusted:
+GAP 4.16 and earlier contain the perfect groups library themselves. This
+package can be loaded into such a version of GAP, but is then a no-op: GAP
+already provides everything it contains, so nothing is read. This is mainly
+done to simplify the transition from the old bundled data library to the
+new package.
 
-   ```sh
-   # Create a fresh clone of your repository, and change into it
-   git clone https://github.com/USERNAME/REPOSITORY gh-pages
-   cd gh-pages
-
-   # Add a new remote pointing to the GitHubPagesForGAP repository
-   git remote add gh-gap https://github.com/gap-system/GitHubPagesForGAP
-   git fetch gh-gap
-
-   # Create a fresh gh-pages branch from the new remote
-   git checkout -b gh-pages gh-gap/gh-pages --no-track
-   ```
-
-5. Add in copies of your `PackageInfo.g`, `README` (or `README.md`) and manual:
-
-   ```
-   cp -f ../PackageInfo.g ../README* .
-   cp -f ../doc/*.{css,html,js,txt} doc/
-   ```
-
-6. Now run the `update.g` GAP script. This extracts data from your
-   `PackageInfo.g` file and puts that data into `_data/package.yml`.
-   From this, the website template can populate the web pages with
-   some sensible default values.
-
-   ```
-   gap update.g
-   ```
-
-7. Commit and push everything.
-
-   ```
-   git add PackageInfo.g README* doc/ _data/package.yml
-   git commit -m "Setup gh-pages based on GitHubPagesForGAP"
-   git push --set-upstream origin gh-pages
-   ```
-
-That's it. You can now see your new package website under
-https://USERNAME.github.io/REPOSITORY/ (of course after
-adjusting USERNAME and REPOSITORY suitably).
-
-
-## Using an existing gh-pages branch
-
-If you previously set up [GitHubPagesForGAP]() and thus already have a `gh-pages`
-branch, you may on occasion have need to make a fresh clone of your package
-repository, and then also would like to recreate the `gh-pages` directory.
-
-The easiest way to do this is to run the `setup-gh-pages` shell script
-provided in the [GitHubPagesForGAP]() from within a git clone of your
-package's GitHub repository.
-
-In case this does not work, or if you want to really know what's going
-on, you can also follow the manual instructions described after the fold.
-
-------
-
-Users with a recent enough git version (recommended is >= 2.7)
-can do this using a "worktree", via the following commands:
-
-   ```sh
-   git branch gh-pages origin/gh-pages
-   git worktree add gh-pages gh-pages
-   ```
-
-If you are using an older version of git, you can instead use a second clone
-of your repository instead:
-
-   ```sh
-   git clone -b gh-pages https://github.com/USERNAME/REPOSITORY gh-pages
-   ```
-
-
-## Adjusting the content and layout
-
-[GitHubPagesForGAP]() tries to automatically provide good defaults for
-most packages. However, you can tweak everything about it:
-
-* To adjust the page layout, edit the files `stylesheets/styles.css`
-and `_layouts/default.html`.
-
-* To adjust the content of the front page, edit `index.md` (resp.
-  for the content of the sidebar, edit `_layouts/default.html`
-
-* You can also add additional pages, in various formats (HTML,
-Markdown, Textile, ...).
-
-For details, please consult the [Jekyll](http://jekyllrb.com/)
-manual.
-
-
-## Testing the site locally
-
-If you would like to test your site on your own machine, without
-uploading it to GitHub (where it is visible to the public), you can do
-so by installing [Jekyll](http://jekyllrb.com/), the static web site
-generator used by GitHub to power GitHub Pages.
-
-Once you have installed Jekyll as described on its homepage, you can
-test the website locally as follows:
-
-1. Go to the `gh-pages` directory we created above.
-
-2. Run jekyll (this launches a tiny web server on your machine):
-
-   ```
-   jekyll serve -w
-   ```
-
-3. Visit the URL http://localhost:4000 in a web browser.
-
-
-## Updating after you made a release
-
-Whenever you make a release of your package (and perhaps more often than
-that), you will want to update your website. The easiest way is to use
-the `release` script from the [ReleaseTools][], which performs all
-the necessary steps for you, except for the very last of actually
-publishing the package (and it can do even that for you, if you
-pass the `-p` option to it).
-
-However, you can also do it manually. The steps for doing it are quite
-similar to the above:
-
-1. Go to the `gh-pages` directory we created above.
-
-2. Add in copies of your `PackageInfo.g`, `README` (or `README.md`) and manual:
-
-   ```
-   cp -f ../PackageInfo.g ../README* .
-   cp -f ../doc/*.{css,html,js,txt} doc/
-   ```
-
-3. Now run the `update.g` GAP script.
-
-4. Commit and push the work we have just done.
-
-   ```
-   git add PackageInfo.g README* doc/ _data/package.yml
-   git commit -m "Update web pages"
-   git push
-   ```
-
-A few seconds after you have done this, your changes will be online
-under https://USERNAME.github.io/REPOSITORY/ .
-
-
-## Updating to a newer version of GitHubPagesForGAP
-
-Normally you should not have to ever do this. However, if you really want to,
-you can attempt to update to the most recent version of [GitHubPagesForGAP]() via
-the following instructions. The difficulty of such an update depends on how
-much you tweaked the site after initially cloning [GitHubPagesForGAP]().
-
-1. Go to the `gh-pages` directory we created above.
-   Make sure that there are no uncommitted changes, as they will be lost
-   when following these instructions.
-
-2. Make sure the `gh-gap` remote exists and has the correct URL. If in doubt,
-   just re-add it:
-   ```
-   git remote remove gh-gap
-   git remote add gh-gap https://github.com/gap-system/GitHubPagesForGAP
-   ```
-
-3. Attempt to merge the latest GitHubPagesForGAP.
-   ```
-   git pull gh-gap gh-pages
-   ```
-
-4. If this produced no errors and just worked, skip to the next step.
-   But it is quite likely that you will have conflicts in the file
-   `_data/package.yml`, or in your `README` or `PackageInfo.g` files.
-   These can usually be resolved by entering this:
-   ```
-   cp ../PackageInfo.g ../README* .
-   gap update.g
-   git add PackageInfo.g README* _data/package.yml
-   ```
-   If you are lucky, these were the only conflicts (check with `git status`).
-   If no merge conflicts remain, finish with this command:
-   ```
-   git commit -m "Merge gh-gap/gh-pages"
-   ```
-   If you still have merge conflicts, and don't know how to resolve them, or
-   get stuck some other way, you can abort the merge process and revert to the
-   original state by issuing this command:
-   ```
-   git merge --abort
-   ```
-
-5. You should be done now. Don't forget to push your changes if you want them
-   to become public.
-
-
-## Packages using GitHubPagesForGAP
-
-The majority of packages listed on <https://gap-packages.github.io> use
-[GitHubPagesForGAP](). If you want some specific examples, here are some:
-
-* <https://gap-packages.github.io/anupq>
-* <https://gap-packages.github.io/cvec>
-* <https://gap-packages.github.io/genss>
-* <https://gap-packages.github.io/io>
-* <https://gap-packages.github.io/NormalizInterface>
-* <https://gap-packages.github.io/nq>
-* <https://gap-packages.github.io/orb>
-* <https://gap-packages.github.io/polenta>
-* <https://gap-packages.github.io/recog>
+For reasons of size, the data for the orders 1376256 and 1966080 is not
+shipped with this package. If you need those groups, fetch `perf27.grp`
+respectively `perf33.grp` from <https://github.com/hulpke/extraperfect> and
+put them into the `data` subdirectory. GAP tells you which file it wants if
+you ask for a group it does not have; see the section "Data Not Distributed
+with the Package" in the manual.
 
 
 ## Contact
 
-Please submit bug reports, suggestions for improvements and patches via
-the [issue tracker](https://github.com/gap-system/GitHubPagesForGAP/issues).
+Please report any issues you encounter at
 
-You can also contact me directly via [email](max@quendi.de).
+  <https://github.com/gap-packages/perfgrp/issues>
 
-Copyright (c) 2013-2025 Max Horn
 
-[GitHubPagesForGAP]: https://github.com/gap-system/GitHubPagesForGAP
-[ReleaseTools]: https://github.com/gap-system/ReleaseTools
+## License
+
+PerfGrp is free software; you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later
+version.
+
+For details, see the file `LICENSE` distributed with this package or the FSF's
+own site <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>.

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (perfgrp) - Chapter 1: The Perfect Groups Library</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1_mj.html">[MathJax on]</a></p>
+<p><a id="X7AC9DE6485B4549F" name="X7AC9DE6485B4549F"></a></p>
+<div class="ChapSects"><a href="chap1.html#X7AC9DE6485B4549F">1 <span class="Heading">The Perfect Groups Library</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X84482FD787E01B91">1.1 <span class="Heading">Accessing the Perfect Groups Library</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X866A25F882A4E97B">1.1-1 SizesPerfectGroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7906BBA7818E9415">1.1-2 <span class="Heading">PerfectGroup</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7E1CB2D18085FF9D">1.1-3 PerfectIdentification</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7D68BE547FE5C0F5">1.1-4 NumberPerfectGroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X866356A684F6B15E">1.1-5 SizeNumbersPerfectGroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X845419F07BB92867">1.1-6 <span class="Heading">DisplayInformationPerfectGroups</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X7916363F856DBC09">1.2 <span class="Heading">Data Not Distributed with the Package</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X875C5BE67BAB7F71">1.3 <span class="Heading">More about the Perfect Groups Library</span></a>
+</span>
+</div>
+</div>
+
+<h3>1 <span class="Heading">The Perfect Groups Library</span></h3>
+
+<p>The <strong class="pkg">GAP</strong> library of finite perfect groups provides, up to isomorphism, a list of all perfect groups whose sizes are less than <span class="SimpleMath">2⋅ 10^6</span>. The groups of orders up to <span class="SimpleMath">10^6</span> have been enumerated by Derek F. Holt and Wilhelm Plesken and published in their book <q>Perfect Groups</q> <a href="chapBib.html#biBHP89">[HP89]</a>. For orders <span class="SimpleMath">n = 86016</span>, 368640, or 737280 this work only counted the groups (but did not explicitly list them), the groups of orders <span class="SimpleMath">n = 61440</span>, 122880, 172032, 245760, 344064, 491520, 688128, or 983040 were omitted.</p>
+
+<p>We are grateful to Derek Holt and Wilhelm Plesken for making their groups available to the <strong class="pkg">GAP</strong> community by contributing their files. It should be noted that their book contains a lot of further information for many of the library groups. So we would like to recommend it to any <strong class="pkg">GAP</strong> user who is interested in the groups. The library of these has been brought into <strong class="pkg">GAP</strong> format by Volkmar Felsch.</p>
+
+<p>Several additional groups omitted from the book <q>Perfect Groups</q> have also been included. Two groups -- one of order 450000 with a factor group of type <span class="SimpleMath">A_6</span> and the one of order 962280 -- were found by Jack Schmidt in 2005. Two groups of order 243000 and one each of orders 729000, 871200, 878460 were found in 2020 by Alexander Hulpke.</p>
+
+<p>The perfect groups of size less than <span class="SimpleMath">2⋅ 10^6</span> which had not been classified in the work of Holt and Plesken have been enumerated by Alexander Hulpke; this classification is described in <a href="chapBib.html#biBHulpke22">[Hul22]</a>, which also gives an account of the methods used and of the verification of the resulting data. These groups are stored directly and provide less construction information in their names.</p>
+
+<p>As all groups are stored by presentations, a permutation representation is obtained by coset enumeration. Note that some of the library groups do not have a faithful permutation representation of small degree. Computations in these groups may be rather time consuming.</p>
+
+<p>The perfect subgroups of a given finite group can be determined with <code class="func">RepresentativesPerfectSubgroups</code> (<a href="https://docs.gap-system.org/doc/ref/chap39.html#X7BA3484E7AE0A0E1"><span class="RefLink">Reference: RepresentativesPerfectSubgroups</span></a>) and <code class="func">ConjugacyClassesPerfectSubgroups</code> (<a href="https://docs.gap-system.org/doc/ref/chap39.html#X7B2233D180DF77A1"><span class="RefLink">Reference: ConjugacyClassesPerfectSubgroups</span></a>), which are declared by the <strong class="pkg">GAP</strong> library but require this package in order to work.</p>
+
+<p><a id="X84482FD787E01B91" name="X84482FD787E01B91"></a></p>
+
+<h4>1.1 <span class="Heading">Accessing the Perfect Groups Library</span></h4>
+
+<p><a id="X866A25F882A4E97B" name="X866A25F882A4E97B"></a></p>
+
+<h5>1.1-1 SizesPerfectGroups</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SizesPerfectGroups</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This is the ordered list of all numbers up to <span class="SimpleMath">2⋅ 10^6</span> that occur as sizes of perfect groups. One can iterate over part of the perfect groups library with:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for n in Intersection([100..500],SizesPerfectGroups()) do</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">     for k in [1..NrPerfectGroups(n)] do</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">       pg := PerfectGroup(n,k);</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">     od;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">   od;</span>
+</pre></div>
+
+<p><a id="X7906BBA7818E9415" name="X7906BBA7818E9415"></a></p>
+
+<h5>1.1-2 <span class="Heading">PerfectGroup</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PerfectGroup</code>( [<var class="Arg">filt</var>, ]<var class="Arg">size</var>[, <var class="Arg">n</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PerfectGroup</code>( [<var class="Arg">filt</var>, ]<var class="Arg">sizenumberpair</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>returns a group which is isomorphic to the library group specified by the size number <code class="code">[ <var class="Arg">size</var>, <var class="Arg">n</var> ]</code> or by the two separate arguments <var class="Arg">size</var> and <var class="Arg">n</var>, assuming a default value of <span class="SimpleMath"><var class="Arg">n</var> = 1</span>. The optional argument <var class="Arg">filt</var> defines the filter in which the group is returned. Possible filters so far are <code class="func">IsPermGroup</code> (<a href="https://docs.gap-system.org/doc/ref/chap43.html#X7879877482F59676"><span class="RefLink">Reference: IsPermGroup</span></a>) and <code class="func">IsSubgroupFpGroup</code> (<a href="https://docs.gap-system.org/doc/ref/chap47.html#X7AF7E2B48199452C"><span class="RefLink">Reference: IsSubgroupFpGroup</span></a>). In the latter case, the generators and relators used coincide with those given in <a href="chapBib.html#biBHP89">[HP89]</a>. The default filter is <code class="func">IsPermGroup</code> (<a href="https://docs.gap-system.org/doc/ref/chap43.html#X7879877482F59676"><span class="RefLink">Reference: IsPermGroup</span></a>).</p>
+
+<p>The data for the orders 1376256 and 1966080 is not distributed with this package; for these, this function enters a break loop explaining how to obtain the missing file, see <a href="chap1.html#X7916363F856DBC09"><span class="RefLink">1.2</span></a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := PerfectGroup(IsPermGroup,6048,1);</span>
+U3(3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=PerfectGroup(IsPermGroup,823080,2);</span>
+A5 2^1 19^2 C 19^1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NrMovedPoints(G);</span>
+6859
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=PerfectGroup(1866240,12);</span>
+PG1866240.12
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NrMovedPoints(G);</span>
+270
+</pre></div>
+
+<p><a id="X7E1CB2D18085FF9D" name="X7E1CB2D18085FF9D"></a></p>
+
+<h5>1.1-3 PerfectIdentification</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PerfectIdentification</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>This attribute is set for all groups obtained from the perfect groups library and has the value <code class="code">[<var class="Arg">size</var>,<var class="Arg">nr</var>]</code> if the group is obtained with these parameters from the library.</p>
+
+<p><a id="X7D68BE547FE5C0F5" name="X7D68BE547FE5C0F5"></a></p>
+
+<h5>1.1-4 NumberPerfectGroups</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberPerfectGroups</code>( <var class="Arg">size</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NrPerfectGroups</code>( <var class="Arg">size</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberPerfectLibraryGroups</code>( <var class="Arg">size</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NrPerfectLibraryGroups</code>( <var class="Arg">size</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>returns the number of non-isomorphic perfect groups of size <var class="Arg">size</var> for each positive integer <var class="Arg">size</var> up to <span class="SimpleMath">2⋅10^6</span>. Additionally, for odd <var class="Arg">size</var> an answer is returned (odd order groups are solvable). For any other argument out of range it returns <code class="keyw">fail</code>. <var class="Arg">NrPerfectGroups</var> is a synonym for <code class="func">NumberPerfectGroups</code>. Moreover <var class="Arg">NumberPerfectLibraryGroups</var> (and its synonym <var class="Arg">NrPerfectLibraryGroups</var>) exist for historical reasons, and return 0 instead of fail for arguments outside the library scope.</p>
+
+<p><a id="X866356A684F6B15E" name="X866356A684F6B15E"></a></p>
+
+<h5>1.1-5 SizeNumbersPerfectGroups</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SizeNumbersPerfectGroups</code>( <var class="Arg">factor1</var>, <var class="Arg">factor2</var>, <var class="Arg">...</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><code class="func">SizeNumbersPerfectGroups</code> returns a list of pairs, each entry consisting of a group order and the number of those groups in the library of perfect groups that contain the specified factors <var class="Arg">factor1</var>, <var class="Arg">factor2</var>, ... among their composition factors.</p>
+
+<p>Each argument must either be the name of a nonabelian simple group or an integer which stands for the product of the sizes of one or more cyclic factors. (In fact, the function replaces all integers among the arguments by their product.)</p>
+
+<p>The following text strings are accepted as simple group names.</p>
+
+
+<ul>
+<li><p><code class="code">A<var class="Arg">n</var></code> or <code class="code">A(<var class="Arg">n</var>)</code> for the alternating groups <span class="SimpleMath">A_<var class="Arg">n</var></span>, <span class="SimpleMath">5 ≤ n ≤ 9</span>, for example <code class="code">A5</code> or <code class="code">A(6)</code>.</p>
+
+</li>
+<li><p><code class="code">L<var class="Arg">n</var>(<var class="Arg">q</var>)</code> or <code class="code">L(<var class="Arg">n</var>,<var class="Arg">q</var>)</code> for PSL<span class="SimpleMath">(n,q)</span>, where <span class="SimpleMath">n ∈ { 2, 3 }</span> and <span class="SimpleMath">q</span> a prime power, ranging</p>
+
+
+<ul>
+<li><p>for <span class="SimpleMath">n = 2</span> from 4 to 125</p>
+
+</li>
+<li><p>for <span class="SimpleMath">n = 3</span> from 2 to 5</p>
+
+</li>
+</ul>
+</li>
+<li><p><code class="code">U<var class="Arg">n</var>(<var class="Arg">q</var>)</code> or <code class="code">U(<var class="Arg">n</var>,<var class="Arg">q</var>)</code> for PSU<span class="SimpleMath">(n,q)</span>, where <span class="SimpleMath">n ∈ { 3, 4 }</span> and <span class="SimpleMath">q</span> a prime power, ranging</p>
+
+
+<ul>
+<li><p>for <span class="SimpleMath">n = 3</span> from 3 to 5</p>
+
+</li>
+<li><p>for <span class="SimpleMath">n = 4</span> from 2 to 2</p>
+
+</li>
+</ul>
+</li>
+<li><p><code class="code">Sp4(4)</code> or <code class="code">S(4,4)</code> for the symplectic group Sp<span class="SimpleMath">(4,4)</span>,</p>
+
+</li>
+<li><p><code class="code">Sz(8)</code> for the Suzuki group Sz<span class="SimpleMath">(8)</span>,</p>
+
+</li>
+<li><p><code class="code">M<var class="Arg">n</var></code> or <code class="code">M(<var class="Arg">n</var>)</code> for the Mathieu groups <span class="SimpleMath">M_11</span>, <span class="SimpleMath">M_12</span>, and <span class="SimpleMath">M_22</span>, and</p>
+
+</li>
+<li><p><code class="code">J<var class="Arg">n</var></code> or <code class="code">J(<var class="Arg">n</var>)</code> for the Janko groups <span class="SimpleMath">J_1</span> and <span class="SimpleMath">J_2</span>.</p>
+
+</li>
+</ul>
+<p>Note that, for most of the groups, the preceding list offers two different names in order to be consistent with the notation used in <a href="chapBib.html#biBHP89">[HP89]</a> as well as with the notation used in the <code class="func">DisplayCompositionSeries</code> (<a href="https://docs.gap-system.org/doc/ref/chap39.html#X82C0D0217ACB2042"><span class="RefLink">Reference: DisplayCompositionSeries</span></a>) command of <strong class="pkg">GAP</strong>. However, as the names are compared as text strings, you are restricted to the above choice. Even expressions like <code class="code">L2(2^5)</code> are not accepted.</p>
+
+<p>As the use of the term PSU<span class="SimpleMath">(n,q)</span> is not unique in the literature, we mention that in this library it denotes the factor group of SU<span class="SimpleMath">(n,q)</span> by its centre, where SU<span class="SimpleMath">(n,q)</span> is the group of all <span class="SimpleMath">n × n</span> unitary matrices with entries in <span class="SimpleMath">GF(q^2)</span> and determinant 1.</p>
+
+<p>The purpose of the function is to provide a simple way to formulate a loop over all library groups which contain certain composition factors.</p>
+
+<p>As this function runs over the whole library, it requires the data files that are not distributed with this package, whatever its arguments are, see <a href="chap1.html#X7916363F856DBC09"><span class="RefLink">1.2</span></a>.</p>
+
+<p><a id="X845419F07BB92867" name="X845419F07BB92867"></a></p>
+
+<h5>1.1-6 <span class="Heading">DisplayInformationPerfectGroups</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DisplayInformationPerfectGroups</code>( <var class="Arg">size</var>[, <var class="Arg">n</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DisplayInformationPerfectGroups</code>( <var class="Arg">sizenumberpair</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><code class="func">DisplayInformationPerfectGroups</code> displays some invariants of the <var class="Arg">n</var>-th group of order <var class="Arg">size</var> from the perfect groups library.</p>
+
+<p>If no value of <var class="Arg">n</var> has been specified, the invariants will be displayed for all groups of size <var class="Arg">size</var> available in the library.</p>
+
+<p>Alternatively, also a list of length two may be entered as the only argument, with entries <var class="Arg">size</var> and <var class="Arg">n</var>.</p>
+
+<p>The information provided for <span class="SimpleMath">G</span> includes the following items:</p>
+
+
+<ul>
+<li><p>a headline containing the size number <code class="code">[ <var class="Arg">size</var>, <var class="Arg">n</var> ]</code> of <span class="SimpleMath">G</span> in the form <code class="code"><var class="Arg">size</var>.<var class="Arg">n</var></code> (the suffix <code class="code">.<var class="Arg">n</var></code> will be suppressed if, up to isomorphism, <span class="SimpleMath">G</span> is the only perfect group of order <var class="Arg">size</var>),</p>
+
+</li>
+<li><p>a message if <span class="SimpleMath">G</span> is simple or quasisimple, i.e., if the factor group of <span class="SimpleMath">G</span> by its centre is simple,</p>
+
+</li>
+<li><p>the <q>description</q> of the structure of <span class="SimpleMath">G</span> as it is given by Holt and Plesken in <a href="chapBib.html#biBHP89">[HP89]</a> (see below),</p>
+
+</li>
+<li><p>the size of the centre of <span class="SimpleMath">G</span> (suppressed, if <span class="SimpleMath">G</span> is simple),</p>
+
+</li>
+<li><p>the prime decomposition of the size of <span class="SimpleMath">G</span>,</p>
+
+</li>
+<li><p>orbit sizes for a faithful permutation representation of <span class="SimpleMath">G</span> which is provided by the library (see below),</p>
+
+</li>
+<li><p>a reference to each occurrence of <span class="SimpleMath">G</span> in the tables of section 5.3 of <a href="chapBib.html#biBHP89">[HP89]</a>. Each of these references consists of a class number and an internal number <span class="SimpleMath">(i,j)</span> under which <span class="SimpleMath">G</span> is listed in that class. For some groups, there is more than one reference because these groups belong to more than one of the classes in the book.</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DisplayInformationPerfectGroups( 30720, 3 );</span>
+#I Perfect group 30720:  A5 ( 2^4 E N 2^1 E 2^4 ) A
+#I   size = 2^11*3*5  orbit size = 240
+#I   Holt-Plesken class 1 (9,3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DisplayInformationPerfectGroups( 30720, 6 );</span>
+#I Perfect group 30720:  A5 ( 2^4 x 2^4 ) C N 2^1
+#I   centre = 2  size = 2^11*3*5  orbit size = 384
+#I   Holt-Plesken class 1 (9,6)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DisplayInformationPerfectGroups( Factorial( 8 ) / 2 );</span>
+#I Perfect group 20160.1:  A5 x L3(2) 2^1
+#I   centre = 2  size = 2^6*3^2*5*7  orbit sizes = 5 + 16
+#I   Holt-Plesken class 31 (1,1) (occurs also in class 32)
+#I Perfect group 20160.2:  A5 2^1 x L3(2)
+#I   centre = 2  size = 2^6*3^2*5*7  orbit sizes = 7 + 24
+#I   Holt-Plesken class 31 (1,2) (occurs also in class 32)
+#I Perfect group 20160.3:  ( A5 x L3(2) ) 2^1
+#I   centre = 2  size = 2^6*3^2*5*7  orbit size = 192
+#I   Holt-Plesken class 31 (1,3)
+#I Perfect group 20160.4:  simple group  A8
+#I   size = 2^6*3^2*5*7  orbit size = 8
+#I   Holt-Plesken class 26 (0,1)
+#I Perfect group 20160.5:  simple group  L3(4)
+#I   size = 2^6*3^2*5*7  orbit size = 21
+#I   Holt-Plesken class 27 (0,1)
+</pre></div>
+
+<p><a id="X7916363F856DBC09" name="X7916363F856DBC09"></a></p>
+
+<h4>1.2 <span class="Heading">Data Not Distributed with the Package</span></h4>
+
+<p>For reasons of size, the data for two orders is <em>not</em> shipped with this package: the <span class="SimpleMath">1639</span> groups of order <span class="SimpleMath">1376256</span> and the <span class="SimpleMath">7344</span> groups of order <span class="SimpleMath">1966080</span>. All other orders are covered by the data files in the <code class="file">data</code> subdirectory of the package.</p>
+
+<p>How many groups there are of these two orders is recorded in the index file, which is always present, so <code class="func">NumberPerfectGroups</code> (<a href="chap1.html#X7D68BE547FE5C0F5"><span class="RefLink">1.1-4</span></a>) and <code class="func">SizesPerfectGroups</code> (<a href="chap1.html#X866A25F882A4E97B"><span class="RefLink">1.1-1</span></a>) work as usual. Any function that has to touch the groups themselves, however, enters a break loop with a message naming the file that is missing and where to get it:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := PerfectGroup(1376256, 1);</span>
+Error,
+
+For reasons of size, the perfect groups library for orders &gt;10^6 is
+not distributed fully by default. To access the group requested, get
+the file perf27.grp from
+https://github.com/hulpke/extraperfect
+and put it in the `data` subdirectory of the `perfgrp` package. Then type
+
+return;
+
+to continue in this GAP session (which will read in the file).
+</pre></div>
+
+<p>To proceed, download the file named in the message from <span class="URL"><a href="https://github.com/hulpke/extraperfect">https://github.com/hulpke/extraperfect</a></span>, place it in the <code class="file">data</code> subdirectory of the <strong class="pkg">PerfGrp</strong> package, and then type <code class="code">return;</code>. The interrupted computation continues, reading in the file that has just been added. The two files in question are <code class="file">perf27.grp</code> for order <span class="SimpleMath">1376256</span> and <code class="file">perf33.grp</code> for order <span class="SimpleMath">1966080</span>.</p>
+
+<p>Besides <code class="func">PerfectGroup</code> (<a href="chap1.html#X7906BBA7818E9415"><span class="RefLink">1.1-2</span></a>) and <code class="func">DisplayInformationPerfectGroups</code> (<a href="chap1.html#X845419F07BB92867"><span class="RefLink">1.1-6</span></a>) called with one of these two orders, this also affects <code class="func">SizeNumbersPerfectGroups</code> (<a href="chap1.html#X866356A684F6B15E"><span class="RefLink">1.1-5</span></a>), which iterates over the whole library and therefore needs <em>both</em> files, whatever composition factors are asked for.</p>
+
+<p><a id="X875C5BE67BAB7F71" name="X875C5BE67BAB7F71"></a></p>
+
+<h4>1.3 <span class="Heading">More about the Perfect Groups Library</span></h4>
+
+<p>For any library group <span class="SimpleMath">G</span>, the library files do not only provide a presentation, but, in addition, a list of one or more subgroups <span class="SimpleMath">S_1, ..., S_r</span> of <span class="SimpleMath">G</span> such that there is a faithful permutation representation of <span class="SimpleMath">G</span> of degree <span class="SimpleMath">∑_{i = 1}^r [G:S_i]</span> on the set <span class="SimpleMath">{ S_i g ∣ 1 ≤ i ≤ r, g ∈ G }</span> of the cosets of the <span class="SimpleMath">S_i</span>. This allows one to construct the groups as permutation groups. The function <code class="func">DisplayInformationPerfectGroups</code> (<a href="chap1.html#X845419F07BB92867"><span class="RefLink">1.1-6</span></a>) displays only the available degree. The message</p>
+
+
+<div class="example"><pre>
+orbit size = 8
+</pre></div>
+
+<p>in the above example means that the available permutation representation is transitive and of degree 8, whereas the message</p>
+
+
+<div class="example"><pre>
+orbit sizes = 5 + 16
+</pre></div>
+
+<p>means that a nontransitive permutation representation is available which acts on two orbits of size 5 and 16 respectively.</p>
+
+<p>The notation used in the <q>description</q> of a group is explained in section 5.1.2 of <a href="chapBib.html#biBHP89">[HP89]</a>. We quote the respective page from there:</p>
+
+<p>Within a class <span class="SimpleMath">Q#p</span>, an isomorphism type of groups will be denoted by an ordered pair of integers <span class="SimpleMath">(r,n)</span>, where <span class="SimpleMath">r ≥ 0</span> and <span class="SimpleMath">n &gt; 0</span>. More precisely, the isomorphism types in <span class="SimpleMath">Q # p</span> of order <span class="SimpleMath">p^r |Q|</span> will be denoted by <span class="SimpleMath">(r,1), (r,2), (r,3), ...</span>. Thus <span class="SimpleMath">Q</span> will always get the size number <span class="SimpleMath">(0,1)</span>.</p>
+
+<p>In addition to the symbol <span class="SimpleMath">(r,n)</span>, the groups in <span class="SimpleMath">Q#p</span> will also be given a more descriptive name. The purpose of this is to provide a very rough idea of the structure of the group. The names are derived in the following manner. First of all, the isomorphism classes of irreducible <span class="SimpleMath">F_pQ</span>-modules <span class="SimpleMath">M</span> with <span class="SimpleMath">|Q|.|M| ≤ 10^6</span>, where <span class="SimpleMath">F_p</span> is the field of order <span class="SimpleMath">p</span>, are assigned symbols. These will either be simply <span class="SimpleMath">p^x</span>, where <span class="SimpleMath">x</span> is the dimension of the module, or, if there is more than one isomorphism class of irreducible modules having the same dimension, they will be denoted by<span class="SimpleMath">p^x</span>, <span class="SimpleMath">p^{x'}</span>, etc. The one-dimensional module with trivial <span class="SimpleMath">Q</span>-action will therefore be denoted by <span class="SimpleMath">p^1</span>. These symbols will be listed under the description of <span class="SimpleMath">Q</span>. The group name consists essentially of a list of the composition factors working from the top of the group downwards; hence it always starts with the name of <span class="SimpleMath">Q</span> itself. (This convention is the most convenient in our context, but it is different from that adopted in the ATLAS <a href="chapBib.html#biBCCN85">[CCN+85]</a>, for example, where composition factors are listed in the reverse order. For example, we denote a group isomorphic to <span class="SimpleMath">SL(2,5)</span> by <span class="SimpleMath">A_5 2^1</span> rather than <span class="SimpleMath">2.A_5</span>.)</p>
+
+<p>Some other symbols are used in the name, in order to give some idea of the relationship between these composition factors, and splitting properties. We shall now list these additional symbols.</p>
+
+
+<dl>
+<dt><strong class="Mark"><span class="SimpleMath">×</span></strong></dt>
+<dd><p>between two factors denotes a direct product of <span class="SimpleMath">F_pQ</span>-modules or groups.</p>
+
+</dd>
+<dt><strong class="Mark">C</strong></dt>
+<dd><p>(for <q>commutator</q>) between two factors means that the second lies in the commutator subgroup of the first. Similarly, a segment of the form <span class="SimpleMath">(f_1 × f_2) C f_3</span> would mean that the factors <span class="SimpleMath">f_1</span> and <span class="SimpleMath">f_2</span> commute modulo <span class="SimpleMath">f_3</span> and <span class="SimpleMath">f_3</span> lies in <span class="SimpleMath">[f_1,f_2]</span>.</p>
+
+</dd>
+<dt><strong class="Mark">A</strong></dt>
+<dd><p>(for <q>abelian</q>) between two factors indicates that the second is in the <span class="SimpleMath">p</span>th power (but not the commutator subgroup) of the first. <q>A</q> may also follow the factors, if bracketed.</p>
+
+</dd>
+<dt><strong class="Mark">E</strong></dt>
+<dd><p>(for <q>elementary abelian</q>) between two factors indicates that together they generate an elementary abelian group (modulo subsequent factors), but that the resulting <span class="SimpleMath">F_p Q</span>-module extension does not split.</p>
+
+</dd>
+<dt><strong class="Mark">N</strong></dt>
+<dd><p>(for <q>nonsplit</q>) before a factor indicates that <span class="SimpleMath">Q</span> (or possibly its covering group) splits down as far at this factor but not over the factor itself. So <q><span class="SimpleMath">Q f_1 N f_2</span></q> means that the normal subgroup <span class="SimpleMath">f_1 f_2</span> of the group has no complement but, modulo <span class="SimpleMath">f_2</span>, <span class="SimpleMath">f_1</span>, does have a complement.</p>
+
+</dd>
+</dl>
+<p>Brackets have their obvious meaning. Summarizing, we have:</p>
+
+
+<dl>
+<dt><strong class="Mark"><span class="SimpleMath">×</span></strong></dt>
+<dd><p>= direct product;</p>
+
+</dd>
+<dt><strong class="Mark">C</strong></dt>
+<dd><p>= commutator subgroup;</p>
+
+</dd>
+<dt><strong class="Mark">A</strong></dt>
+<dd><p>= abelian;</p>
+
+</dd>
+<dt><strong class="Mark">E</strong></dt>
+<dd><p>= elementary abelian; and</p>
+
+</dd>
+<dt><strong class="Mark">N</strong></dt>
+<dd><p>= nonsplit.</p>
+
+</dd>
+</dl>
+<p>Here are some examples.</p>
+
+
+<dl>
+<dt><strong class="Mark">(i)</strong></dt>
+<dd><p><span class="SimpleMath">A_5 (2^4 E 2^1 E 2^4) A</span> means that the pairs <span class="SimpleMath">2^4 E 2^1</span> and <span class="SimpleMath">2^1 E 2^4</span> are both elementary abelian of exponent 4.</p>
+
+</dd>
+<dt><strong class="Mark">(ii)</strong></dt>
+<dd><p><span class="SimpleMath">A_5 (2^4 E 2^1 A) C 2^1</span> means that <span class="SimpleMath">O_2(G)</span> is of symplectic type <span class="SimpleMath">2^{1+5}</span>, with Frattini factor group of type <span class="SimpleMath">2^4 E 2^1</span>. The <q>A</q> after the <span class="SimpleMath">2^1</span> indicates that <span class="SimpleMath">G</span> has a central cyclic subgroup <span class="SimpleMath">2^1 A 2^1</span> of order 4.</p>
+
+</dd>
+<dt><strong class="Mark">(iii)</strong></dt>
+<dd><p><span class="SimpleMath">L_3(2) ((2^1 E) × ( N 2^3 E 2^{3'} A) C) 2^{3'}</span> means that the <span class="SimpleMath">2^{3'}</span> factor at the bottom lies in the commutator subgroup of the pair <span class="SimpleMath">2^3 E 2^{3'}</span> in the middle, but the lower pair <span class="SimpleMath">2^{3'} A 2^{3'}</span> is abelian of exponent 4. There is also a submodule <span class="SimpleMath">2^1 E 2^{3'}</span>, and the covering group <span class="SimpleMath">L_3(2) 2^1</span> of <span class="SimpleMath">L_3(2)</span> does not split over the <span class="SimpleMath">2^3</span> factor. (Since <span class="SimpleMath">G</span> is perfect, it goes without saying that the extension <span class="SimpleMath">L_3(2) 2^1</span> cannot split itself.)</p>
+
+</dd>
+</dl>
+<p>We must stress that this notation does not always succeed in being precise or even unambiguous, and the reader is free to ignore it if it does not seem helpful.</p>
+
+<p>If such a group description has been given in the book for <span class="SimpleMath">G</span> (and, in fact, this is the case for most of the library groups), it is displayed by <code class="func">DisplayInformationPerfectGroups</code> (<a href="chap1.html#X845419F07BB92867"><span class="RefLink">1.1-6</span></a>). Otherwise the function provides a less explicit description of the (in these cases unique) Holt-Plesken class to which <span class="SimpleMath">G</span> belongs, together with a serial number if this is necessary to make it unique.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>
