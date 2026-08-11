@@ -3,14 +3,14 @@
 ##  Test for cohomology and isomorphism: Recompute perfect groups
 ##
 gap> START_TEST("perfect.tst");
-gap> Read(Filename(DirectoriesPackageLibrary("perfgrp","tst/testextra"),"makeperfect.g"));;
+gap> Read(Filename(DirectoriesPackageLibrary("perfgrp","tst"),"makeperfect.g"));;
 gap> l:=Practice(1920);;
 gap> Length(l);
 7
 gap> l:=Practice(10752);;
 gap> Length(l);
 9
-gap> LoadPackage("atlasrep");;
+gap> LoadPackage("atlasrep", false);;
 gap> perms:=AtlasGenerators("2.A5",1).generators;;
 gap> mats:=AtlasGenerators("2.A5",4).generators;;
 gap> gp:=Group(perms);;

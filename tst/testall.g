@@ -5,8 +5,6 @@
 # metadata in PackageInfo.g.
 #
 LoadPackage("PerfGrp");
-TestDirectory( [
-  DirectoriesPackageLibrary("PerfGrp","tst/manualexamples"),
-  DirectoriesPackageLibrary("PerfGrp","tst/testinstall"),
-  ], rec(exitGAP := true));
+TestDirectory( DirectoriesPackageLibrary("PerfGrp","tst"),
+  rec(exitGAP := true));
 FORCE_QUIT_GAP(1);

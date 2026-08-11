@@ -10,5 +10,5 @@ fi;
 AutoDoc(rec(
     scaffold := rec( includes := [ "perfgrp.xml" ],
                      bib := "manualbib.xml" ),
-    extract_examples := rec( subdir := "tst/manualexamples" ),
+    extract_examples := true,
 ));
