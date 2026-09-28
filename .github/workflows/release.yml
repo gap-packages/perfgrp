@@ -32,19 +32,10 @@ jobs:
       - uses: gap-actions/build-pkg-docs@v2
         with:
           use-latex: true
-      - name: "Compress data files"
+      - name: Run .release script
         run: |
-          echo "Current package disk space usage:"
-          du -cks data
-          echo "Compressing data files..."
-          for file in data/*.grp
-          do
-              gzip -n -f "$file"
-              printf .
-          done
-          echo
-          echo "Done compressing data files, disk space:"
-          du -cks data
+          ./.release
+          rm .release
       - uses: gap-actions/release-pkg@v1
         with:
           dry-run: ${{ inputs.dry-run }}
